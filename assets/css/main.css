@@ -3354,6 +3354,72 @@ body.is-preload #header:after {
   padding: 0;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.unityContainerContainer {
+  width: 800px;
+  height: 450px;
+  margin: auto;
+  clear: both;
+}
+
+.unityContainer {
+  width: 800px;
+  height: 450px;
+}
+
+#canvas {
+  width: 800px;
+  height: 450px;
+}
+
+.howToPlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.howToPlay li {
+  text-align: left;
+}
+
 /* XLarge */
 
 @media screen and (max-width: 1680px) {
@@ -3432,6 +3498,16 @@ body.is-preload #header:after {
   #footer {
     padding: 4em 0 4em 0;
     background-attachment: scroll;
+  }
+
+  .unityContainerContainer {
+    width: 100%;
+    height: 56.25%;
+  }
+
+  .unityContainer {
+    width: 100%;
+    height: 56.25%;
   }
 }
 
