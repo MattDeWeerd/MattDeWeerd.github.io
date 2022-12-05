@@ -1,32 +1,46 @@
-/*
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+"use strict";
 
-(function($) {
+//Enable tooltips everywhere
+var tooltipTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
 
-	var	$window = $(window),
-		$body = $('body');
+/* Vanilla RSS - https://github.com/sdepold/vanilla-rss */
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1141px',  '1680px' ],
-			large:    [ '981px',   '1140px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ '321px',   '480px'  ],
-			xxsmall:  [ null,      '320px'  ]
-		});
+const rss = new RSS(
+  document.querySelector("#rss-feeds"),
+  //Change this to your own rss feeds
+  "https://feeds.feedburner.com/TechCrunch/startups",
+  {
+    // how many entries do you want?
+    // default: 4
+    // valid values: any integer
+    limit: 3,
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+    // will request the API via https
+    // default: false
+    // valid values: false, true
+    ssl: true,
 
-	// Scrolly.
-		$('.scrolly').scrolly();
+    // outer template for the html transformation
+    // default: "<ul>{entries}</ul>"
+    // valid values: any string
+    layoutTemplate: "<div class='items'>{entries}</div>",
 
-})(jQuery);
+    // inner template for each entry
+    // default: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>'
+    // valid values: any string
+    entryTemplate:
+      '<div class="item"><h3 class="title"><a href="{url}" target="_blank">{title}</a></h3><div><p>{shortBodyPlain}</p><a class="more-link" href="{url}" target="_blank"><i class="fas fa-external-link-alt"></i>Read more</a></div></div>',
+  }
+);
+rss.render();
+
+/* Github Calendar - https://github.com/IonicaBizau/github-calendar */
+new GitHubCalendar("#github-graph", "MattDeWeerd", { responsive: true });
+
+/* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
+GitHubActivity.feed({ username: "mdo", selector: "#ghfeed" });
