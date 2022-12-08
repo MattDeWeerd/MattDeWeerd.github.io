@@ -824,6 +824,29 @@ body[data-theme="dark"] .text-muted {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
+.contactme input {
+  padding: 14px 12px 14px 12px;
+  border-radius: 0.375rem;
+  width: 100%;
+}
+
+.contactme textarea {
+  max-width: 100%;
+  min-height: 56px;
+  padding: 14px 12px 14px 12px;
+  border: 2px solid #b9c1cd;
+  border-radius: 0.375rem;
+  color: #434343 !important;
+}
+.contactme input .nameemailfield {
+  padding: 8px, 0px, 8px, 0px;
+}
+
+.contactme .nameemailsubjectdiv input {
+  color: #434343 !important;
+  border: 2px solid #b9c1cd;
+}
+
 @media (max-width: 767.98px) {
   .header {
     text-align: center;
