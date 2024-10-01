@@ -847,6 +847,28 @@ body[data-theme="dark"] .text-muted {
   border: 2px solid #b9c1cd;
 }
 
+.calendar {
+  min-height: unset !important;
+  border: none !important;
+}
+
+body > div > div > div.primary.col-lg-8.col-12 > section.github.section > div > div.calendar > div.position-relative > div {
+  border: none !important;
+}
+
+.calendar .ContributionCalendar-day {
+  border: 1px solid gray;
+}
+
+.calendar .float-right .ContributionCalendar-day {
+  display: flex;
+  align-self: center;
+}
+
+.contrib-column { 
+  display: none;
+}
+
 @media (max-width: 767.98px) {
   .header {
     text-align: center;
